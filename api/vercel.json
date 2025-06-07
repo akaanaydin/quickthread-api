@@ -1,0 +1,9 @@
+{
+  "functions": {
+    "api/fetch.ts": {
+      "memory": 1024,
+      "maxDuration": 20,
+      "runtime": "nodejs18.x"
+    }
+  }
+}
