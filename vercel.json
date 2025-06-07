@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "builds": [
+    { "src": "api/fetch.js", "use": "@vercel/node" }
+  ],
   "functions": {
     "api/**/*.js": {
       "runtime": "nodejs18.x",
