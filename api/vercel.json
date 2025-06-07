@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/**/*.js": {
+    "api/fetch.js": {
       "runtime": "nodejs18.x",
       "memory": 1024,
       "maxDuration": 20
