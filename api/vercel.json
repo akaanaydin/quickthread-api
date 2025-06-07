@@ -1,9 +1,14 @@
 {
   "functions": {
     "api/fetch.ts": {
+      "runtime": "nodejs18.x",
       "memory": 1024,
-      "maxDuration": 20,
-      "runtime": "nodejs18.x"
+      "maxDuration": 20
+    }
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
     }
   }
 }
