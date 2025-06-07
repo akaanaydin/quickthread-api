@@ -1,11 +1,10 @@
-import { VercelRequest, VercelResponse } from '@vercel/node'
-import puppeteer from 'puppeteer-core'
-import chromium from '@sparticuz/chromium'
+const chromium = require('@sparticuz/chromium')
+const puppeteer = require('puppeteer-core')
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+module.exports = async (req, res) => {
   const { url } = req.body
 
-  if (!url || !url.includes("twitter.com") && !url.includes("x.com")) {
+  if (!url || (!url.includes('twitter.com') && !url.includes('x.com'))) {
     return res.status(400).json({ error: 'Geçersiz tweet URL' })
   }
 
@@ -39,7 +38,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const cleaned = tweets.join('\n\n')
     res.status(200).json({ text: cleaned })
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({ error: 'Flood çekilemedi', detail: err.message })
   }
 }
